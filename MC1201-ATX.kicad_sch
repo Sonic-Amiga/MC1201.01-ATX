@@ -35410,6 +35410,16 @@
 		)
 		(uuid "3309e8a4-9b64-40aa-895d-5ba3c23c402e")
 	)
+	(label "BSY"
+		(at 524.51 204.47 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "356b6df2-2505-4769-a8a3-fdfb24d4383a")
+	)
 	(label "~{AD15}"
 		(at 523.24 191.77 0)
 		(effects
