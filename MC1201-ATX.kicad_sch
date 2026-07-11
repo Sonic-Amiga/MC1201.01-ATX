@@ -18318,13 +18318,14 @@
 		)
 		(uuid "4a229ad9-4afd-4615-9a6e-f48a06421cc4")
 	)
-	(text "Выбор окон RAM"
+	(text "Выбор окон RAM.\nИнформацию по установке\nперемычек см в документации."
 		(exclude_from_sim no)
-		(at 207.264 146.05 0)
+		(at 198.882 147.32 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
+			(justify left)
 		)
 		(uuid "50a27d5f-d91d-47f7-91ad-3ad02c685aa4")
 	)
@@ -35027,7 +35028,7 @@
 		)
 		(uuid "1126bf4e-0477-448f-a3fe-7c643903b692")
 	)
-	(label "~{A11}"
+	(label "~{A12}"
 		(at 240.03 203.2 0)
 		(effects
 			(font
@@ -35617,7 +35618,7 @@
 		)
 		(uuid "49a439d5-1393-4419-9bd8-e8069c33b371")
 	)
-	(label "~{A14}"
+	(label "~{A15}"
 		(at 284.48 205.74 0)
 		(effects
 			(font
@@ -36167,7 +36168,7 @@
 		)
 		(uuid "8371b496-0e40-4896-afeb-2e49b02f766d")
 	)
-	(label "~{A9}"
+	(label "~{A10}"
 		(at 240.03 198.12 0)
 		(effects
 			(font
@@ -36667,7 +36668,7 @@
 		)
 		(uuid "bd78179b-21aa-4d7c-b8fb-212a4e263e13")
 	)
-	(label "~{A12}"
+	(label "~{A13}"
 		(at 284.48 200.66 0)
 		(effects
 			(font
@@ -36847,7 +36848,7 @@
 		)
 		(uuid "cb65d38b-23ed-475e-846a-ac92b9c0dc36")
 	)
-	(label "~{A13}"
+	(label "~{A14}"
 		(at 284.48 203.2 0)
 		(effects
 			(font
@@ -37007,7 +37008,7 @@
 		)
 		(uuid "dadc7149-f388-4197-b188-e6e39aadf082")
 	)
-	(label "~{A10}"
+	(label "~{A11}"
 		(at 240.03 200.66 0)
 		(effects
 			(font
