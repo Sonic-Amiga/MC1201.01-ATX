@@ -18265,6 +18265,18 @@
 		)
 		(uuid "f4aa3fc0-8ff3-4c1f-9d6d-6950c393d82a")
 	)
+	(text "ERRATUM E0008\nНе декодируется окно системного\nОЗУ 177600_{8}..177677_{8}"
+		(exclude_from_sim no)
+		(at 243.84 155.194 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "1ee7646d-ceec-447f-a75f-a68de31e3df9")
+	)
 	(text "ERRATUM E0006\nЛишний резистор"
 		(exclude_from_sim no)
 		(at 35.306 118.618 0)
@@ -18475,9 +18487,9 @@
 		)
 		(uuid "aeee67e6-441f-44ed-bb62-39ee8384bc6b")
 	)
-	(text "Задание правила\nвыборки ОЗУ"
+	(text "Задание правила\nвыборки ОЗУ. На схеме\nпоказана конфигурация\nдля МС1201.01."
 		(exclude_from_sim no)
-		(at 213.106 200.914 0)
+		(at 212.598 199.39 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -20238,6 +20250,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "bbc154f7-2011-48f4-b9b2-afaa894c72ff")
+	)
+	(junction
+		(at 242.57 175.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bc120aba-2b21-46bd-9667-19b4d3324106")
 	)
 	(junction
 		(at 562.61 43.18)
@@ -23297,6 +23315,16 @@
 	)
 	(wire
 		(pts
+			(xy 242.57 175.26) (xy 243.84 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "06714ae1-4bf5-4a31-81c4-b2103bf76ad4")
+	)
+	(wire
+		(pts
 			(xy 523.24 173.99) (xy 528.32 173.99)
 		)
 		(stroke
@@ -23614,6 +23642,17 @@
 			(type default)
 		)
 		(uuid "0be167c0-e6a0-4e42-9ffb-67905ed86648")
+	)
+	(wire
+		(pts
+			(xy 242.57 160.02) (xy 242.57 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 0 0 1)
+		)
+		(uuid "0c34dc81-a17c-444e-b814-91f7d5996ecd")
 	)
 	(wire
 		(pts
@@ -29670,7 +29709,7 @@
 	)
 	(wire
 		(pts
-			(xy 240.03 175.26) (xy 243.84 175.26)
+			(xy 240.03 175.26) (xy 242.57 175.26)
 		)
 		(stroke
 			(width 0)
@@ -33551,6 +33590,17 @@
 			(type default)
 		)
 		(uuid "e7d0d16f-cb97-48cc-9726-f4b3b837065e")
+	)
+	(wire
+		(pts
+			(xy 243.84 160.02) (xy 242.57 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 0 0 1)
+		)
+		(uuid "e7e9435f-dbbe-48a8-b14a-0ccf449275a4")
 	)
 	(wire
 		(pts
@@ -37721,6 +37771,30 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+	)
+	(global_label "~{SYSMEM}"
+		(shape input)
+		(at 243.84 160.02 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2d5e4b42-9ad0-4fc2-8fdf-1208766cb7f9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 254.3846 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -50129,7 +50203,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "3f9c7325-b0da-4c3f-a89c-6f0c85b3641b")
 		(property "Reference" "RX8"
 			(at 221.996 204.47 90)
@@ -62130,7 +62204,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "9ad2f427-ee87-4af2-9f75-f70d225a5361")
 		(property "Reference" "SEL-1X2"
 			(at 205.994 207.264 90)
@@ -65515,7 +65589,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "b0ebc24c-f49d-48ce-a599-5cca74789419")
 		(property "Reference" "EX1_8"
 			(at 239.014 169.926 90)
@@ -65868,7 +65942,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "b1bb7ab4-62e9-437c-b94c-2a22ab78d4c4")
 		(property "Reference" "#PWR047"
 			(at 256.54 168.91 0)
@@ -65882,7 +65955,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 256.54 160.02 0)
+			(at 256.54 161.29 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -71637,7 +71710,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "db6a1ce1-69e0-4d1d-a800-abb6e3c639f5")
 		(property "Reference" "RX6"
 			(at 220.726 211.328 0)
@@ -73053,7 +73126,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "e4ae635d-5815-47cd-941e-f21e0a6c218f")
 		(property "Reference" "RX7"
 			(at 232.664 210.82 0)
