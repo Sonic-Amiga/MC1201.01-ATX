@@ -19238,6 +19238,12 @@
 		(uuid "48a589ab-1607-4707-b08e-fed151e89e23")
 	)
 	(junction
+		(at 562.61 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "492c3c7f-695b-4c73-8606-d2d19dacd888")
+	)
+	(junction
 		(at 327.66 295.91)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -19988,6 +19994,12 @@
 		(uuid "a053c405-6dfa-45b3-bc52-59e56a0632ab")
 	)
 	(junction
+		(at 562.61 83.82)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a120bb51-0d06-4472-8267-5f8a72e77516")
+	)
+	(junction
 		(at 416.56 170.18)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -20268,6 +20280,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "bd7d3ae2-40b8-4d0f-b45d-b72cc20a82c6")
+	)
+	(junction
+		(at 562.61 93.98)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bdf214ba-3cd0-4871-a2c8-d7f5e50bf18c")
 	)
 	(junction
 		(at 229.87 185.42)
@@ -24978,6 +24996,16 @@
 	)
 	(wire
 		(pts
+			(xy 549.91 88.9) (xy 552.45 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "28fbbe84-f6b8-4286-a7fe-5d0f08311891")
+	)
+	(wire
+		(pts
 			(xy 543.56 123.19) (xy 543.56 115.57)
 		)
 		(stroke
@@ -25586,6 +25614,16 @@
 			(type default)
 		)
 		(uuid "35b032bc-12b0-4e90-a6c1-6470ce8d5005")
+	)
+	(wire
+		(pts
+			(xy 562.61 88.9) (xy 562.61 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "35b12334-798d-407c-adc0-8154a3f4cbac")
 	)
 	(wire
 		(pts
@@ -26746,6 +26784,16 @@
 			(type default)
 		)
 		(uuid "50dabbd0-6a96-49ca-b9c3-4fcf318c93af")
+	)
+	(wire
+		(pts
+			(xy 549.91 99.06) (xy 552.45 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "511d21b4-9a29-4157-bf14-cba6e06daa3d")
 	)
 	(wire
 		(pts
@@ -28406,6 +28454,16 @@
 			(type default)
 		)
 		(uuid "723ab829-8518-4142-92a7-121b2e432b01")
+	)
+	(wire
+		(pts
+			(xy 562.61 99.06) (xy 562.61 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "729b90f5-e534-44de-b52b-5f916f1a448a")
 	)
 	(wire
 		(pts
@@ -31640,6 +31698,16 @@
 	)
 	(wire
 		(pts
+			(xy 549.91 93.98) (xy 552.45 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bd1d4c5a-a2b1-4d6a-817a-57a6fd2b1648")
+	)
+	(wire
+		(pts
 			(xy 523.24 83.82) (xy 530.86 83.82)
 		)
 		(stroke
@@ -32089,6 +32157,16 @@
 			(color 255 0 0 1)
 		)
 		(uuid "c7a95fbc-8c44-4402-826d-daba8a27b767")
+	)
+	(wire
+		(pts
+			(xy 560.07 88.9) (xy 562.61 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c832a134-9df4-4c76-82e9-089ae71a6505")
 	)
 	(wire
 		(pts
@@ -32689,6 +32767,16 @@
 			(type default)
 		)
 		(uuid "d4b9e237-2c52-42c4-b951-9e5c0cb0bbde")
+	)
+	(wire
+		(pts
+			(xy 562.61 88.9) (xy 562.61 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4be0306-1a12-4310-ae3c-418bd3211111")
 	)
 	(wire
 		(pts
@@ -34304,6 +34392,16 @@
 	)
 	(wire
 		(pts
+			(xy 560.07 99.06) (xy 562.61 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f8183401-433d-4eb1-8924-3171e26071e8")
+	)
+	(wire
+		(pts
 			(xy 266.7 292.1) (xy 273.05 292.1)
 		)
 		(stroke
@@ -34681,6 +34779,16 @@
 			(type default)
 		)
 		(uuid "fea4254a-fdcf-465a-a71c-04fe925ffe81")
+	)
+	(wire
+		(pts
+			(xy 562.61 93.98) (xy 560.07 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fecc5574-f022-4517-acac-2174ac2313fd")
 	)
 	(wire
 		(pts
@@ -37534,6 +37642,30 @@
 			)
 		)
 	)
+	(global_label "~{DOUT}"
+		(shape passive)
+		(at 549.91 99.06 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0be8edf2-4057-4873-bacd-5e9c99a4fb7c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 543.1375 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "~{RPLY}"
 		(shape passive)
 		(at 549.91 33.02 180)
@@ -37595,6 +37727,30 @@
 		(uuid "1b125551-8a93-4e39-a1e6-387caa5d906f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 95.47 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "~{SYNC}"
+		(shape passive)
+		(at 549.91 93.98 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1e329e10-ef53-41d4-ba6c-fe469e2dddd6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 543.1375 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -38003,6 +38159,30 @@
 		(uuid "3ae6d045-780f-44e9-8220-6c6808503ae3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 513.1187 212.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "~{SEL1}"
+		(shape passive)
+		(at 549.91 88.9 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3fd31c38-6d37-45ef-89d1-1d424e923d69")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 543.44 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -44769,6 +44949,87 @@
 			(project "MC1201-ATX"
 				(path "/b39cb134-5ae9-4850-b9c0-554b604d614b"
 					(reference "#PWR070")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 556.26 99.06 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "208b4156-9f9c-4120-81ef-544898f36191")
+		(property "Reference" "R6"
+			(at 556.514 96.774 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "2.2K"
+			(at 562.102 96.774 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
+			(at 556.26 100.838 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 556.26 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 556.26 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "4ce2ca2d-96f2-4d31-8dc8-088c1641da64")
+		)
+		(pin "1"
+			(uuid "2dc5142e-a686-48db-ad66-44dbc4f35319")
+		)
+		(instances
+			(project "MC1201-ATX"
+				(path "/b39cb134-5ae9-4850-b9c0-554b604d614b"
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -72534,6 +72795,87 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 556.26 88.9 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e30db528-7581-4467-9708-cf91f922014b")
+		(property "Reference" "R34"
+			(at 556.514 86.614 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "2.2K"
+			(at 562.102 86.614 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
+			(at 556.26 90.678 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 556.26 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 556.26 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "37d864e2-3deb-4a48-804b-2448761fc609")
+		)
+		(pin "1"
+			(uuid "7791fdb9-e2c6-44d1-9277-9a00f42eff8c")
+		)
+		(instances
+			(project "MC1201-ATX"
+				(path "/b39cb134-5ae9-4850-b9c0-554b604d614b"
+					(reference "R34")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:VCC")
 		(at 27.94 158.75 0)
 		(unit 1)
@@ -75939,6 +76281,87 @@
 			(project "MC1201-ATX"
 				(path "/b39cb134-5ae9-4850-b9c0-554b604d614b"
 					(reference "R18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 556.26 93.98 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f5b8626b-da2e-4620-aeca-02dd6f59bb19")
+		(property "Reference" "R5"
+			(at 556.514 91.694 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "2.2K"
+			(at 562.102 91.694 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
+			(at 556.26 95.758 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 556.26 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 556.26 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "b665dd7d-70c1-4d4c-82b2-33cc282dad18")
+		)
+		(pin "1"
+			(uuid "584f99cb-1676-45af-95e8-cfac725547ff")
+		)
+		(instances
+			(project "MC1201-ATX"
+				(path "/b39cb134-5ae9-4850-b9c0-554b604d614b"
+					(reference "R5")
 					(unit 1)
 				)
 			)
