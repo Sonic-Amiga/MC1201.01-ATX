@@ -48542,7 +48542,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "74LS04"
+		(property "Value" "555LN1"
 			(at 149.86 313.6899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -48658,7 +48658,7 @@
 				)
 			)
 		)
-		(property "Value" "74LS04"
+		(property "Value" "555LN1"
 			(at 346.202 264.414 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -62990,7 +62990,7 @@
 				)
 			)
 		)
-		(property "Value" "74LS04"
+		(property "Value" "555LN1"
 			(at 362.966 273.05 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -72380,7 +72380,7 @@
 				)
 			)
 		)
-		(property "Value" "74LS04"
+		(property "Value" "555LN1"
 			(at 55.88 45.72 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -76869,7 +76869,7 @@
 				)
 			)
 		)
-		(property "Value" "74LS04"
+		(property "Value" "555LN1"
 			(at 33.02 45.72 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -77872,7 +77872,7 @@
 				)
 			)
 		)
-		(property "Value" "74LS04"
+		(property "Value" "555LN1"
 			(at 344.17 250.19 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -77988,7 +77988,7 @@
 				)
 			)
 		)
-		(property "Value" "74LS04"
+		(property "Value" "555LN1"
 			(at 48.26 69.85 0)
 			(show_name no)
 			(do_not_autoplace no)
