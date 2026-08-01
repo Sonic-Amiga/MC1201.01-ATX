@@ -44976,8 +44976,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.2K"
-			(at 562.102 96.774 90)
+		(property "Value" "470"
+			(at 561.848 96.774 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -72816,8 +72816,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.2K"
-			(at 562.102 86.614 90)
+		(property "Value" "1K"
+			(at 560.578 86.36 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -76308,8 +76308,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.2K"
-			(at 562.102 91.694 90)
+		(property "Value" "470"
+			(at 561.848 91.694 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
