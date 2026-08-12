@@ -227,15 +227,25 @@ SRAM была перенесена с МС1201.02, которая имеет д�
 установка резисторов подтяжки к +5В сопротивлением 2.2К на все линии AD, а также на /RPLY. Вход /CE РЕ-мулятора
 при этом соединяется с землёй.
 
+## Тестирование с помощью тест-ПЗУ
+
+Для финальной проверки и доводки собранной машины я написал специальное тест-ПЗУ. Его можно записать в РЕ-мулятор и
+проверить вашу машину. Исходники доступны в каталоге [Test_ROM](Test_ROM).
+
+Для сборки Вам потребуются:
+
+* [Кросс-ассемблер MACRO-11](https://github.com/j-hoppe/MACRO11)
+* [Линкер](https://github.com/Sonic-Amiga/obj2bin) - Брать из ветки high-addresses
+* [Утилита rev16.py](https://github.com/1801BM1/k1801/tree/master/rom/rev16_py)
+* [Утилита srec_cat](https://srecord.sourceforge.net/)
+
+Я собираю из-под Windows с использованием окружения MSYS2. Все вышеозначенные инструменты должны быть доступны в $PATH.
+
 # Благодарности
 
-- Павлу "MAX232CPE" за замечательный проект.
-
-- 1801BM1@gmail.com за исчерпывающую документацию на процессор
-https://forum.maxiol.com/index.php?act=attach&type=post&id=10512
-
-- Oleksandr Kovalenko за библиотеку элементов для KiCad
-https://github.com/alk0v/KiCad-Lib-ussr-elements
-
-- Vslav за документацию на К1801ВП1 и проект РЕ-мулятора.
-https://github.com/1801BM1/k1801
+* Павлу "MAX232CPE" за замечательный проект.
+* 1801BM1@gmail.com за [исчерпывающую документацию на процессор](https://forum.maxiol.com/index.php?act=attach&type=post&id=10512).
+* Oleksandr Kovalenko за [библиотеку элементов для KiCad](https://github.com/alk0v/KiCad-Lib-ussr-elements).
+* Vslav за [документацию на К1801ВП1 и проект РЕ-мулятора](https://github.com/1801BM1/k1801).
+* Jörg Hoppe за порт MACRO-11
+* Don North за кросс-платформенный линковщик
