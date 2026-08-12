@@ -64,47 +64,13 @@ START:	MOV	#0, SP
 	CLR	R2
 	MOV	#070000, R3
 	CALL 	TSTRAM
-	
-; TODO: Реализовать тест дополнительного ОЗУ
+	JMP	TEST2		; Далее нам надо будет отключить страницы ПЗУ, поэтому прыгаем в постоянную область
 
-; Теперь Read-Modify-Write (побайтовая запись)
-
-	CALL	TSTRMW
-
-; Все тесты пройдены. Печатаем сообщение и начинаем читать символы из UART
-; и отображать их на экране. Это можно использовать для проверки канала ввода.
-
-	MOV	#ENDMSG, R1
-	CALL	PUTSTR	
-GETCH:	bit	#200,@#177560		; Проверяем готовность приёмника
-	beq	GETCH			; Если нет, то крутимся в цикле и ждём.
-	movb	@#177562, R0		; Считали символ
-	MOV	R0, R1
-	CALL	PUTCHR			; и вывели
-	CMPB	#^D13, R1		; К 0x0D прибавляем 0x0A
-	BNE	GETCH
-	MOVB	#^D10, R0
-	CALL	PUTCHR
-	BR	GETCH
-
-; Сбой системной памяти. Мы переходим сюда с SP = 0.
+; Сбой системной памяти. Мы переходим сюда с SP = 0,
+; поэтому вместо возврата функция PUTSTR произведёт останов.
 
 SMFAIL:	MOV	#BADMSG, R1
-
-; Выводим сообщение по адресу (R1)
-; Если SP == 0, то мы знаем, что мы на раннем тесте системного ОЗУ. Просто останавливаемся.
-; Иначе это обычная функция, которую можно вызвать с помощью CALL
-
-PUTSTR:	MOVB	(R1)+, R0
-	cmpb	R0, #0
-3$:	BEQ	4$		; Дошли до конца сообщения
-2$:	bit	#200, @#177564
-	beq	2$
-	movb	r0, @#177566
-	BR	PUTSTR
-4$:	CMP	SP, #0		; Если у нас нет стека, то это полный останов.
-	BEQ	.
-	RETURN			; Иначе возврат
+	JMP	PUTSTR
 
 ; Вектора исключений. Пока что мы считаем любое прерывание критической ошибкой.
 ; Если исключение произошло при раннем старте, SP будет равен нулю. Выводим сообщение и останавливаемся.
@@ -116,21 +82,21 @@ HLT:	CMP	#0, SP		; Есть стек ?
 	MOV	#HLTMSG, R2	; Адрес сообщения с причиной
 	BR	DUMP		; Дамп
 1$:	MOV	#HLTMSG, R1
-	BR	PUTSTR
+	BR	PUTS2
 DBLERR:	CMP	#0, SP
 	BEQ	1$
 	MOV	R2, -(SP)
 	MOV	#DBLMSG, R2
 	BR	DUMP
 1$:	MOV	#DBLMSG, R1
-	BR	PUTSTR
+	BR	PUTS2
 INTERR:	CMP	#0, SP
 	BEQ	1$
 	MOV	R2, -(SP)
 	MOV	#INTMSG, R2
 	BR	DUMP
 1$:	MOV	#INTMSG, R1
-	BR	PUTSTR
+PUTS2:	JMP	PUTSTR
 
 ; У нас есть стек, мы можем вызывать функции. Распечатаем все регистры,
 ; это должно помочь в диагностике.
@@ -180,12 +146,85 @@ DUMP:	MOV	R1, -(SP)	; Сохраняем R1, R0 на стеке. R2 уже со�
 	CALL	PUTSTR
 	BR	.
 
+BANNER:	.ASCII	/HELLORLD/
+	.BYTE	^D13, ^D10
+	.ASCII	/MC1201.01 TEST ROM V0.1B BY PAVEL FEDIN <PAVEL_FEDIN@MAIL.RU>/
+	.BYTE	^D13, ^D10,
+	.ASCII	/SYSTEM RAM TEST/
+	.BYTE	^D13, ^D10, 0
+HLTMSG:	.ASCII	/HALT/
+	.BYTE	^D13, ^D10, 0
+DBLMSG:	.ASCII	/DBL TRAP/
+	.BYTE	^D13, ^D10, 0
+INTMSG: .ASCII	/IRQ/
+	.BYTE	^D13, ^D10, 0
+PCMSG:	.ASCIZ	/PC=/
+PSWMSG:	.ASCIZ	/ PSW=/
+SPMSG:	.ASCIZ	/ SP=/
+R0MSG:	.BYTE	^D13, ^D10
+	.ASCIZ	/R0=/
+R1MSG:	.ASCIZ	/ R1=/
+R2MSG:	.ASCIZ	/ R2=/
+R3MSG:	.BYTE	^D13, ^D10
+	.ASCIZ	/R3=/
+R4MSG:	.ASCIZ	/ R4=/
+R5MSG:	.ASCIZ	/ R5=/
+
+; Продолжение программы расположено в постоянно замапленной области ПЗУ.
+; Отсюда мы будем проверять расширенную память.
+
+	.=173000
+TEST2:	BIC	#14,@#177716		; Выключаем обе страницы ПЗУ
+	MOV	#LRTMSG, R1
+	MOV	#160000, R2
+	MOV	#013000 / 2, R3
+	CALL 	TSTRAM
+	MOV	#HRTMSG, R1
+	MOV	#174000, R2
+	MOV	#1000 / 2, R3
+	CALL 	TSTRAM
+
+; Теперь Read-Modify-Write (побайтовая запись)
+
+	CALL	TSTRMW
+
+; Все тесты пройдены. Печатаем сообщение и начинаем читать символы из UART
+; и отображать их на экране. Это можно использовать для проверки канала ввода.
+
+	MOV	#ENDMSG, R1
+	CALL	PUTSTR	
+GETCH:	bit	#200,@#177560		; Проверяем готовность приёмника
+	beq	GETCH			; Если нет, то крутимся в цикле и ждём.
+	movb	@#177562, R0		; Считали символ
+	MOV	R0, R1
+	CALL	PUTCHR			; и вывели
+	CMPB	#^D13, R1		; К 0x0D прибавляем 0x0A
+	BNE	GETCH
+	MOVB	#^D10, R0
+	CALL	PUTCHR
+	BR	GETCH
+
 ; Вывод одного символа из R0
 
 PUTCHR:	bit	#200, @#177564
 	beq	PUTCHR
 	movb	r0, @#177566
 	RETURN
+
+; Выводим сообщение по адресу (R1)
+; Если SP == 0, то мы знаем, что мы на раннем тесте системного ОЗУ. Просто останавливаемся.
+; Иначе это обычная функция, которую можно вызвать с помощью CALL
+
+PUTSTR:	MOVB	(R1)+, R0
+	cmpb	R0, #0
+3$:	BEQ	4$		; Дошли до конца сообщения
+2$:	bit	#200, @#177564
+	beq	2$
+	movb	r0, @#177566
+	BR	PUTSTR
+4$:	CMP	SP, #0		; Если у нас нет стека, то это полный останов.
+	BEQ	.
+	RETURN			; Иначе возврат
 
 ; Вывод числа из R1 в восьмеричном виде
 
@@ -237,7 +276,7 @@ TSTRAM:	CALL	PUTSTR
 ; Переиспользованный код: печать " PASS"
 	
 PASS:	MOV	#OKMSG, R1
-PUTS2:	JMP	PUTSTR		; Слишком далеко для BR
+	BR	PUTSTR		; Слишком далеко для BR
 
 ; Тест побайтовой записи. Проверяем саму логику, поэтому достаточно всего одной ячейки.
 ; Оформлен в подпрограмму для эффективного переиспользования кода.
@@ -261,15 +300,10 @@ TSTRMW:	MOV	#RMWMSG, R1
 	BEQ	PASS
 
 ; Тест памяти не пройден
-; R2 - адрес
 ; R4 - записанное значение
 ; R5 - прочитанное значение
 
-MEMFLT:	MOV	#MFMSG, R1
-	CALL	PUTSTR
-	MOV	R2, R1
-	CALL	PUTNUM
-	MOV	#WRMSG, R1
+MEMFLT:	MOV	#WRMSG, R1
 	CALL	PUTSTR
 	MOV	R4, R1
 	CALL	PUTNUM
@@ -278,42 +312,22 @@ MEMFLT:	MOV	#MFMSG, R1
 	MOV	R5, R1
 	CALL	PUTNUM
 	MOV	#CRLF, R1
-	BR	PUTS2
+	BR	PUTSTR
 
-BANNER:	.ASCII	/HELLORLD/
-	.BYTE	^D13, ^D10
-	.ASCII	/MC1201.01 TEST ROM V0.1B BY PAVEL FEDIN <PAVEL_FEDIN@MAIL.RU>/
-	.BYTE	^D13, ^D10,
-	.ASCII	/SYSTEM RAM TEST/
-CRLF:	.BYTE	^D13, ^D10, 0
-HLTMSG:	.ASCII	/HALT/
-	.BYTE	^D13, ^D10, 0
-DBLMSG:	.ASCII	/DBL TRAP/
-	.BYTE	^D13, ^D10, 0
-INTMSG: .ASCII	/IRQ/
-	.BYTE	^D13, ^D10, 0
 OKMSG:	.ASCII	/ PASS/
-	.BYTE	^D13, ^D10, 0
+CRLF:	.BYTE	^D13, ^D10, 0
 MRTMSG:	.ASCII	/MAIN RAM TEST.../
+	.BYTE	^D13, ^D10, 0
+LRTMSG:	.ASCII	/LOW EXTENDED RAM TEST.../
+	.BYTE	^D13, ^D10, 0
+HRTMSG:	.ASCII	/HIGH EXTENDED RAM TEST.../
 	.BYTE	^D13, ^D10, 0
 BADMSG:	.ASCII	/ FAIL/
 	.BYTE	^D13, ^D10, 0
-MFMSG:	.ASCIZ	/ FAIL AT /
-WRMSG:	.ASCIZ	/ WROTE /
+WRMSG:	.ASCIZ	/ FAIL: WROTE /
 RDMSG:	.ASCIZ	/ READ /
 RMWMSG:	.ASCIZ	/READ-MODIFY-WRITE TEST/
 ENDMSG:	.ASCII	/ALL TESTS DONE, ENTERING TV TYPEWRITER MODE/
 	.BYTE	^D13, ^D10, 0
-PCMSG:	.ASCIZ	/PC=/
-PSWMSG:	.ASCIZ	/ PSW=/
-SPMSG:	.ASCIZ	/ SP=/
-R0MSG:	.BYTE	^D13, ^D10
-	.ASCIZ	/R0=/
-R1MSG:	.ASCIZ	/ R1=/
-R2MSG:	.ASCIZ	/ R2=/
-R3MSG:	.BYTE	^D13, ^D10
-	.ASCIZ	/R3=/
-R4MSG:	.ASCIZ	/ R4=/
-R5MSG:	.ASCIZ	/ R5=/
 
 	.END	ENTRY

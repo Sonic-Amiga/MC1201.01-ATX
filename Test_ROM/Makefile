@@ -1,6 +1,6 @@
 all: Test_ROM.hex
 
-Test_ROM.OBJ: Test_ROM.mac
+Test_ROM.obj: Test_ROM.mac
 	macro11 -o $@ $^
 	
 Test_ROM.bin: Test_ROM.obj
@@ -11,3 +11,6 @@ Test_ROM.rom: Test_ROM.bin
 
 Test_ROM.hex: Test_ROM.rom Test_ROM.cat
 	srec_cat @Test_ROM.cat
+
+clean:
+	rm -f *.obj *.bin *.rom
