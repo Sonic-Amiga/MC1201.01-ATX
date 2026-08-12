@@ -1,0 +1,319 @@
+; Наше использование системного ОЗУ
+	STACK	= 177612	; Область стека
+	USRPSW	= 177614	; PSW при исключениях и операции START
+	USRPC	= 177616	; PC при исключениях и операции START
+
+	.ASECT
+	.=160000
+ENTRY:	BR	START
+
+	.WORD	HLT, 002340
+	.WORD	DBLERR, 002340
+	.WORD	INTERR, 002340
+
+; Мы только что запустились и не знаем состояние нашей системы
+; У нас может не быть системного ОЗУ, поэтому начало программы никак
+; его не использует и полагается только на регистры
+
+START:	MOV	#0, SP
+	MOV	#BANNER, R1	; Наше первое сообщение
+3$:	MOVB	(R1)+, R0
+	cmpb	R0, #0
+	BEQ	4$
+2$:	bit	#200, @#177564	; Ждём готовности UART на передачу
+	beq	2$
+	movb	r0, @#177566	; Отправляем символ на печать
+	BR	3$		; И идём за следующим
+
+; Теперь проверим системное ОЗУ.
+; Выполним быстрый тест: чередующиеся 0 и 1 в двух комбинациях и затем 0.
+; Не будем усложнять себе жизнь и используем только запись и чтение полных слов.
+; Побайтовые операции мы проверим позже.
+
+4$:	MOV	#177600, R1	; Стартовый адрес
+	MOV	#125125, R2	; 0xAA55
+	MOV	#052652, R3	; 0x55AA
+	CLR	R4
+	movb	#^D32, R5	; 64 байта = 32 слова
+5$:	MOV	R2, (R1)	; Записываем значение
+	MOV	(R1), R0	; Читаем и сравниваем
+	CMP	R0, R2
+	BNE	SMFAIL
+	MOV	R3, (R1)
+	MOV	(R1), R0
+	CMP	R0, R3
+	BNE	SMFAIL
+	MOV	R4, (R1)
+	MOV	(R1)+, R0
+	CMP	R0, R4
+	BNE	SMFAIL
+	MOVB	#056, R0	; Печатаем '.', так мы сможем посчитать, сколько слов пройдено.
+6$:	bit	#200, @#177564
+	beq	6$
+	movb	r0, @#177566
+	sob	R5, 5$
+
+; Тест системного ОЗУ пройдён. Теперь у нас есть стек.
+
+	mov	#STACK, SP
+	CALL	PASS
+	
+; Запускаем тест основного ОЗУ 56К
+	
+	MOV	#MRTMSG, R1
+	CLR	R2
+	MOV	#070000, R3
+	CALL 	TSTRAM
+	
+; TODO: Реализовать тест дополнительного ОЗУ
+
+; Теперь Read-Modify-Write (побайтовая запись)
+
+	CALL	TSTRMW
+
+; Все тесты пройдены. Печатаем сообщение и начинаем читать символы из UART
+; и отображать их на экране. Это можно использовать для проверки канала ввода.
+
+	MOV	#ENDMSG, R1
+	CALL	PUTSTR	
+GETCH:	bit	#200,@#177560		; Проверяем готовность приёмника
+	beq	GETCH			; Если нет, то крутимся в цикле и ждём.
+	movb	@#177562, R0		; Считали символ
+	MOV	R0, R1
+	CALL	PUTCHR			; и вывели
+	CMPB	#^D13, R1		; К 0x0D прибавляем 0x0A
+	BNE	GETCH
+	MOVB	#^D10, R0
+	CALL	PUTCHR
+	BR	GETCH
+
+; Сбой системной памяти. Мы переходим сюда с SP = 0.
+
+SMFAIL:	MOV	#BADMSG, R1
+
+; Выводим сообщение по адресу (R1)
+; Если SP == 0, то мы знаем, что мы на раннем тесте системного ОЗУ. Просто останавливаемся.
+; Иначе это обычная функция, которую можно вызвать с помощью CALL
+
+PUTSTR:	MOVB	(R1)+, R0
+	cmpb	R0, #0
+3$:	BEQ	4$		; Дошли до конца сообщения
+2$:	bit	#200, @#177564
+	beq	2$
+	movb	r0, @#177566
+	BR	PUTSTR
+4$:	CMP	SP, #0		; Если у нас нет стека, то это полный останов.
+	BEQ	.
+	RETURN			; Иначе возврат
+
+; Вектора исключений. Пока что мы считаем любое прерывание критической ошибкой.
+; Если исключение произошло при раннем старте, SP будет равен нулю. Выводим сообщение и останавливаемся.
+; Иначе распечатываем подробно контекст исключения.
+
+HLT:	CMP	#0, SP		; Есть стек ?
+	BEQ	1$		; Если нет, то просто печать причины исключения и останов
+	MOV	R2, -(SP)	; Сохраняем R2
+	MOV	#HLTMSG, R2	; Адрес сообщения с причиной
+	BR	DUMP		; Дамп
+1$:	MOV	#HLTMSG, R1
+	BR	PUTSTR
+DBLERR:	CMP	#0, SP
+	BEQ	1$
+	MOV	R2, -(SP)
+	MOV	#DBLMSG, R2
+	BR	DUMP
+1$:	MOV	#DBLMSG, R1
+	BR	PUTSTR
+INTERR:	CMP	#0, SP
+	BEQ	1$
+	MOV	R2, -(SP)
+	MOV	#INTMSG, R2
+	BR	DUMP
+1$:	MOV	#INTMSG, R1
+	BR	PUTSTR
+
+; У нас есть стек, мы можем вызывать функции. Распечатаем все регистры,
+; это должно помочь в диагностике.
+
+DUMP:	MOV	R1, -(SP)	; Сохраняем R1, R0 на стеке. R2 уже сохранён
+	MOV	R0, -(SP)
+	MOV	R2, R1
+	CALL	PUTSTR
+	MOV	#PCMSG, R1
+	CALL	PUTSTR
+	MOV	@USRPC, R1
+	CALL	PUTNUM
+	MOV	#PSWMSG, R1
+	CALL	PUTSTR
+	MOV	@USRPSW, R1
+	CALL	PUTNUM
+	MOV	#SPMSG, R1
+	CALL	PUTSTR
+	MOV	SP, R1
+	ADD	#6, R1		; Компенсируем три PUSH
+	CALL	PUTNUM
+	MOV	#R0MSG, R1
+	CALL	PUTSTR
+	MOV	(SP)+, R1
+	CALL	PUTNUM
+	MOV	#R1MSG, R1
+	CALL	PUTSTR
+	MOV	(SP)+, R1
+	CALL	PUTNUM
+	MOV	#R2MSG, R1
+	CALL	PUTSTR
+	MOV	(SP)+, R1
+	CALL	PUTNUM
+	MOV	#R3MSG, R1
+	CALL	PUTSTR
+	MOV	R3, R1
+	CALL	PUTNUM
+	MOV	#R4MSG, R1
+	CALL	PUTSTR
+	MOV	R4, R1
+	CALL	PUTNUM
+	MOV	#R5MSG, R1
+	CALL	PUTSTR
+	MOV	R5, R1
+	CALL	PUTNUM
+	MOV	#CRLF, R1
+	CALL	PUTSTR
+	BR	.
+
+; Вывод одного символа из R0
+
+PUTCHR:	bit	#200, @#177564
+	beq	PUTCHR
+	movb	r0, @#177566
+	RETURN
+
+; Вывод числа из R1 в восьмеричном виде
+
+PUTNUM:	CLR	R0
+	MOVB	#6, R2		; Всего 6 цифр
+	BR	2$		; В первой цифре (бит 15) всего один разряд, поэтому начинаем с середины
+1$:	CLR	R0
+	ASL	R1
+	ROL	R0
+	ASL	R1
+	ROL	R0
+2$:	ASL	R1
+	ROL	R0
+	ADD	#060, R0	; '0' + R0
+	CALL	PUTCHR
+	SOB	R2, 1$
+	RETURN
+
+; Проверка ОЗУ
+; R1 - текст для печати
+; R2 - стартовый адрес
+; R3 - длина в словах
+
+TSTRAM:	CALL	PUTSTR
+5$:	MOVB	#^D13, R0
+	CALL	PUTCHR
+	MOV	R2, R1
+	MOV	R2, R4		; PUTNUM портит R2, поэтому временно используем R4
+	CALL	PUTNUM
+	MOV	R4, R2
+	MOV	#125125, R4	; 0xAA55
+	MOV	R4, (R2)	; Записываем значение
+	MOV	(R2), R5	; Читаем и сравниваем
+	CMP	R5, R4
+	BNE	MEMFLT
+	MOV	#052652, R4	; 0x55AA
+	MOV	R4, (R2)
+	MOV	(R2), R5
+	CMP	R5, R4
+	BNE	MEMFLT
+	CLR	R4
+	MOV	R4, (R2)
+	MOV	(R2), R5
+	CMP	R5, R4
+	BNE	MEMFLT
+	ADD	#2, R2
+	sob	R3, 5$
+
+; Переиспользованный код: печать " PASS"
+	
+PASS:	MOV	#OKMSG, R1
+PUTS2:	JMP	PUTSTR		; Слишком далеко для BR
+
+; Тест побайтовой записи. Проверяем саму логику, поэтому достаточно всего одной ячейки.
+; Оформлен в подпрограмму для эффективного переиспользования кода.
+
+TSTRMW:	MOV	#RMWMSG, R1
+	CALL	PUTSTR
+	CLR	R2		; Используем адрес 0
+	MOV	#125125, R4	; 0xAA55
+	MOV	R4, (R2)
+	MOVB	#077, R5
+	MOVB	R5, @#0
+	MOV	#125077, R4	; Должно получиться вот это
+	MOV	@#0, R5
+	CMP	R5, R4
+	BNE	MEMFLT
+	MOVB	#133, R5	; Теперь меняем старший байт
+	MOVB	R5, @#1
+	MOV	#055477, R4	; Должно получиться вот это
+	MOV	@#0, R5
+	CMP	R5, R4		; Если всё ОК, то PASS
+	BEQ	PASS
+
+; Тест памяти не пройден
+; R2 - адрес
+; R4 - записанное значение
+; R5 - прочитанное значение
+
+MEMFLT:	MOV	#MFMSG, R1
+	CALL	PUTSTR
+	MOV	R2, R1
+	CALL	PUTNUM
+	MOV	#WRMSG, R1
+	CALL	PUTSTR
+	MOV	R4, R1
+	CALL	PUTNUM
+	MOV	#RDMSG, R1
+	CALL	PUTSTR
+	MOV	R5, R1
+	CALL	PUTNUM
+	MOV	#CRLF, R1
+	BR	PUTS2
+
+BANNER:	.ASCII	/HELLORLD/
+	.BYTE	^D13, ^D10
+	.ASCII	/MC1201.01 TEST ROM V0.1B BY PAVEL FEDIN <PAVEL_FEDIN@MAIL.RU>/
+	.BYTE	^D13, ^D10,
+	.ASCII	/SYSTEM RAM TEST/
+CRLF:	.BYTE	^D13, ^D10, 0
+HLTMSG:	.ASCII	/HALT/
+	.BYTE	^D13, ^D10, 0
+DBLMSG:	.ASCII	/DBL TRAP/
+	.BYTE	^D13, ^D10, 0
+INTMSG: .ASCII	/IRQ/
+	.BYTE	^D13, ^D10, 0
+OKMSG:	.ASCII	/ PASS/
+	.BYTE	^D13, ^D10, 0
+MRTMSG:	.ASCII	/MAIN RAM TEST.../
+	.BYTE	^D13, ^D10, 0
+BADMSG:	.ASCII	/ FAIL/
+	.BYTE	^D13, ^D10, 0
+MFMSG:	.ASCIZ	/ FAIL AT /
+WRMSG:	.ASCIZ	/ WROTE /
+RDMSG:	.ASCIZ	/ READ /
+RMWMSG:	.ASCIZ	/READ-MODIFY-WRITE TEST/
+ENDMSG:	.ASCII	/ALL TESTS DONE, ENTERING TV TYPEWRITER MODE/
+	.BYTE	^D13, ^D10, 0
+PCMSG:	.ASCIZ	/PC=/
+PSWMSG:	.ASCIZ	/ PSW=/
+SPMSG:	.ASCIZ	/ SP=/
+R0MSG:	.BYTE	^D13, ^D10
+	.ASCIZ	/R0=/
+R1MSG:	.ASCIZ	/ R1=/
+R2MSG:	.ASCIZ	/ R2=/
+R3MSG:	.BYTE	^D13, ^D10
+	.ASCIZ	/R3=/
+R4MSG:	.ASCIZ	/ R4=/
+R5MSG:	.ASCIZ	/ R5=/
+
+	.END	ENTRY
