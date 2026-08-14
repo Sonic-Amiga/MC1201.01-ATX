@@ -1,10 +1,10 @@
 # Данный скрипт генерирует hex-файл с абсолютным адресом, пригодный для зашивки
 # с помощью STM32CubeProgrammer.
 #
-# На данный момент имеется только конфигурация 0
+# Этот файл содержит только тест-ПЗУ и может быть записан в РЕ-мулятор поверх общей
+# прошивки (ROM_Images)
 #
-Test_ROM.rom -Binary -offset 0x08008000
-
--generate 0x0800A002 0x0800A010 -repeat-string %00%FF%FF%FF%FF%FF%FF%FF%FF%FF%FF%FF%FF%FF
+Test_ROM.rom -Binary -offset 0x08012050
+-generate 0x08014052 0x08014060 -repeat-string %FF%FF%FF%FF%FF%00%FF%FF%FF%FF%FF%FF%FF%FF
 
 -o Test_ROM.hex -Intel -obs=64
