@@ -1,0 +1,28 @@
+# Данный скрипт генерирует hex-файл с абсолютным адресом, пригодный для зашивки
+# с помощью STM32CubeProgrammer.
+
+# Конфигурация 0: монитор ДВК-1, первая версия
+000_mc1201.rom  -Binary -offset 0x08008000
+-generate 0x0800A002 0x0800A010 -repeat-string %00%FF%FF%FF%FF%FF%FF%FF%FF%FF%FF%FF%FF%FF
+
+# Конфигурация 1: монитор ДВК-1, обновлённая версия
+031_mc1201.rom -Binary -offset 0x0800A010
+-generate 0x0800C012 0x0800C020 -repeat-string %FF%00%FF%FF%FF%FF%FF%FF%FF%FF%FF%FF%FF%FF
+
+# Конфигурация 2: монитор ДВК-1 с поддержкой загрузки с MX
+054_mc1201.rom -Binary -offset 0x0800C020
+-generate 0x0800E022 0x0800E030 -repeat-string %FF%FF%00%FF%FF%FF%FF%FF%FF%FF%FF%FF%FF%FF
+
+# Конфигурация 3: Бейсик ДВК-1, пользовательское ПЗУ, стартовый адрес 100000
+012_mc1201.rom -Binary -offset 0x0800E030
+-generate 0x08010032 0x08010040 -repeat-string %FF%FF%FF%00%FF%FF%FF%FF%FF%FF%FF%FF%FF%FF
+
+# Конфигурация 4: Бейсик ДВК-1, пользовательское ПЗУ, стартовый адрес 140000
+013_mc1201.rom -Binary -offset 0x08010040
+-generate 0x08012042 0x08012050 -repeat-string %FF%FF%FF%FF%00%FF%FF%FF%FF%FF%FF%FF%FF%FF
+
+# Конфигурация 5: тест-ПЗУ
+Test_ROM.rom -Binary -offset 0x08012050
+-generate 0x08014052 0x08014060 -repeat-string %FF%FF%FF%FF%FF%00%FF%FF%FF%FF%FF%FF%FF%FF
+
+-o Remulator_ALL.hex -Intel -obs=64

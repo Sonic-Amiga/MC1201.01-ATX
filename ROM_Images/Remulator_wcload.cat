@@ -1,0 +1,4 @@
+a205.hex          -Intel -offset -0x08004000
+Remulator_ALL.hex -Intel -offset -0x08004000
+
+-o Remulator_wcload.hex -Intel -obs=64
