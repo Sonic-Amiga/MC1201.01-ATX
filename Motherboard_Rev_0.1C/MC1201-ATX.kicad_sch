@@ -18577,6 +18577,17 @@
 		)
 		(uuid "ccc467a5-e790-4095-b97c-e38b925244b9")
 	)
+	(text "В оригинальной схеме в\nпоз. DXD1 стоит диод, но\nв этом нет смысла."
+		(exclude_from_sim no)
+		(at 347.218 24.384 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "cda532b1-412b-4d65-a8a2-e4871ec0cbe2")
+	)
 	(text "Элементы, помеченные\nкак \"не устанавливать\",\nиспользуются в оригинальной\nсхеме для связи с силовым\nинтерфейсом МПИ, который\nв данной схеме отсутствует\n(если не указано иное)"
 		(exclude_from_sim no)
 		(at 100.33 130.302 0)
@@ -42487,7 +42498,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "10592889-cc1e-4e39-aed5-2a70b3d6b3f3")
 		(property "Reference" "RX2"
 			(at 343.916 59.69 0)
@@ -52580,7 +52591,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47K"
+		(property "Value" "10K"
 			(at 187.96 50.7999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -52749,7 +52760,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "4dbf5247-025b-426e-843e-1bcf79430bfd")
 		(property "Reference" "EX2_8"
 			(at 328.422 148.336 90)
@@ -56986,8 +56997,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Diode:1N4148")
-		(at 349.25 27.94 90)
+		(lib_id "Device:R")
+		(at 349.25 27.94 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -56998,7 +57009,7 @@
 		(fields_autoplaced yes)
 		(uuid "70f1832d-2f87-4afa-90fe-4db29c81131e")
 		(property "Reference" "DXD1"
-			(at 351.79 26.6699 90)
+			(at 351.79 26.6699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -57008,8 +57019,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "1N4148"
-			(at 351.79 29.2099 90)
+		(property "Value" "100K"
+			(at 351.79 29.2099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -57020,7 +57031,7 @@
 			)
 		)
 		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
-			(at 349.25 27.94 0)
+			(at 351.028 27.94 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57041,7 +57052,7 @@
 				)
 			)
 		)
-		(property "Description" "100V 0.15A standard switching diode, DO-35"
+		(property "Description" "Resistor"
 			(at 349.25 27.94 0)
 			(hide yes)
 			(show_name no)
