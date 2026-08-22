@@ -50,7 +50,23 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.5
+          "border_display_style": 2,
+          "border_hatch_pitch": 0.5,
+          "corner_radius": 0.0,
+          "corner_smoothing": 0,
+          "fill_mode": 0,
+          "hatch_gap": 1.5,
+          "hatch_orientation": 0.0,
+          "hatch_smoothing_level": 0,
+          "hatch_smoothing_value": 0.1,
+          "hatch_thickness": 1.0,
+          "min_clearance": 0.5,
+          "min_island_area": 10.0,
+          "min_thickness": 0.25,
+          "pad_connection": 1,
+          "remove_islands": 0,
+          "thermal_relief_gap": 0.5,
+          "thermal_relief_spoke_width": 0.5
         }
       },
       "diff_pair_dimensions": [],
@@ -224,7 +240,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": "0.1C"
+      "sch_revision": "1.0"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -472,7 +488,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "MC1201-ATX.kicad_pro",
+    "filename": "Fixes_Rev_0.1C.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -586,18 +602,6 @@
         },
         {
           "group_by": false,
-          "label": "Description",
-          "name": "Description",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "#",
-          "name": "${ITEM_NUMBER}",
-          "show": false
-        },
-        {
-          "group_by": false,
           "label": "Sim.Pins",
           "name": "Sim.Pins",
           "show": false
@@ -606,6 +610,18 @@
           "group_by": false,
           "label": "Sim.Device",
           "name": "Sim.Device",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Description",
+          "name": "Description",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
           "show": false
         }
       ],
@@ -652,18 +668,18 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "MC1201-ATX.kicad_sch",
-        "name": "Root",
-        "uuid": "b39cb134-5ae9-4850-b9c0-554b604d614b"
+        "filename": "Fixes_Rev_0.1C.kicad_sch",
+        "name": "Fixes_Rev_0.1C",
+        "uuid": "e8e5a0b4-44b9-4e84-b144-8989a57edfae"
       }
     ],
-    "used_designators": "",
+    "used_designators": "#PWR8-45,D2-11,R3-7,DD11-14,J1-9,RN1-5,DX3-4,U6-24,C1-11",
     "variants": []
   },
   "sheets": [
     [
-      "b39cb134-5ae9-4850-b9c0-554b604d614b",
-      "Root"
+      "e8e5a0b4-44b9-4e84-b144-8989a57edfae",
+      "Fixes_Rev_0.1C"
     ]
   ],
   "text_variables": {},
