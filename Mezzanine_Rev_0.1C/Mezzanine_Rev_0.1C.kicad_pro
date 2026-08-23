@@ -40,8 +40,8 @@
         "other_text_upright": false,
         "pads": {
           "drill": 0.8,
-          "height": 1.27,
-          "width": 2.54
+          "height": 1.6,
+          "width": 1.6
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -69,7 +69,13 @@
           "thermal_relief_spoke_width": 0.5
         }
       },
-      "diff_pair_dimensions": [],
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
+      ],
       "drc_exclusions": [],
       "meta": {
         "version": 2
@@ -203,7 +209,12 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [],
+      "track_widths": [
+        0.0,
+        0.4,
+        1.5,
+        2.0
+      ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
           "corner_radius_percentage": 80,
@@ -230,7 +241,12 @@
           "spacing": 0.6
         }
       },
-      "via_dimensions": [],
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        }
+      ],
       "zones_allow_external_fillets": false
     },
     "ipc2581": {
@@ -488,7 +504,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "Fixes_Rev_0.1C.kicad_pro",
+    "filename": "Mezzanine_Rev_0.1C.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -506,11 +522,24 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.2,
+        "track_width": 0.3,
         "tuning_profile": "",
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
+      },
+      {
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "name": "Power",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 2.0,
+        "tuning_profile": "",
+        "via_diameter": 2.0,
+        "via_drill": 1.0
       }
     ],
     "meta": {
@@ -518,7 +547,16 @@
     },
     "net_colors": null,
     "netclass_assignments": null,
-    "netclass_patterns": []
+    "netclass_patterns": [
+      {
+        "netclass": "Power",
+        "pattern": "VCC"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "GND"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {
@@ -668,18 +706,18 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "Fixes_Rev_0.1C.kicad_sch",
-        "name": "Fixes_Rev_0.1C",
+        "filename": "Mezzanine_Rev_0.1C.kicad_sch",
+        "name": "Mezzanine_Rev_0.1C",
         "uuid": "e8e5a0b4-44b9-4e84-b144-8989a57edfae"
       }
     ],
-    "used_designators": "#PWR8-45,D2-11,R3-7,DD11-14,J1-9,RN1-5,DX3-4,U6-24,C1-11",
+    "used_designators": "#PWR8-47,D2-11,R3-8,DD11-14,J1-9,RN1-5,DX3-4,U6-24,C1-20",
     "variants": []
   },
   "sheets": [
     [
       "e8e5a0b4-44b9-4e84-b144-8989a57edfae",
-      "Fixes_Rev_0.1C"
+      "Mezzanine_Rev_0.1C"
     ]
   ],
   "text_variables": {},
