@@ -211,6 +211,7 @@
       ],
       "track_widths": [
         0.0,
+        0.3,
         0.4,
         1.5,
         2.0
@@ -562,7 +563,7 @@
     "last_paths": {
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "out/",
       "specctra_dsn": "",
       "step": "",
       "vrml": ""
@@ -711,7 +712,7 @@
         "uuid": "e8e5a0b4-44b9-4e84-b144-8989a57edfae"
       }
     ],
-    "used_designators": "#PWR8-47,D2-11,DX3-4,RN1-5,C1-20,R3-8,DD11-14,J1-9,U6-24",
+    "used_designators": "#PWR8-50,D2-11,DX3-4,RN1-5,C1-20,R3-8,DD11-14,J1-9,U6-24",
     "variants": []
   },
   "sheets": [
