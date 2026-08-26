@@ -35806,7 +35806,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "CD4067B"
+		(property "Value" "CD4067BE"
 			(at 171.3931 77.47 0)
 			(show_name no)
 			(do_not_autoplace no)

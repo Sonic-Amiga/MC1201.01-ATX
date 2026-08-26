@@ -14930,7 +14930,7 @@
 				)
 			)
 		)
-		(property "Value" "CD74HCT4067M"
+		(property "Value" "CD4067BE"
 			(at 7.62 30.27 90)
 			(layer "F.Fab")
 			(uuid "e22ed549-ff6c-4aaf-a784-1016bda2e643")
