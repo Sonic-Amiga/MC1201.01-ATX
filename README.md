@@ -249,7 +249,7 @@ SRAM была перенесена с МС1201.02, которая имеет д�
 Для сборки Вам потребуются:
 
 * [Кросс-ассемблер MACRO-11](https://github.com/j-hoppe/MACRO11)
-* [Линкер](https://github.com/Sonic-Amiga/obj2bin) - Брать из ветки high-addresses
+* [Линкер](https://github.com/Sonic-Amiga/obj2bin) - Брать из ветки devel
 * [Утилита rev16.py](https://github.com/1801BM1/k1801/tree/master/rom/rev16_py)
 * [Утилита srec_cat](https://srecord.sourceforge.net/)
 
