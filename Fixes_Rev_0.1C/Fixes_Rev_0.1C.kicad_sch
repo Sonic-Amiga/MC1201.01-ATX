@@ -4955,6 +4955,17 @@
 		)
 		(uuid "e167e882-8143-4c40-aa43-f07ef67a2378")
 	)
+	(text "Линии /INIT, /DOUT, /AD2, /AD3\nподключить к системному разъему (X3)"
+		(exclude_from_sim no)
+		(at 63.5 26.035 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "efd2b431-2bca-4f10-b7d8-2bf0cb3add88")
+	)
 	(junction
 		(at 71.12 179.07)
 		(diameter 0)
@@ -7510,7 +7521,7 @@
 			)
 		)
 	)
-	(global_label "~{RESET}"
+	(global_label "~{INIT}"
 		(shape input)
 		(at 64.77 68.58 180)
 		(fields_autoplaced yes)
@@ -7522,7 +7533,7 @@
 		)
 		(uuid "5b524b82-e4f2-4073-80ff-91eee008067e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 56.0397 68.58 0)
+			(at 58.2771 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7932,7 +7943,7 @@
 			(uuid "94c3317f-5067-4598-82c0-5e8a18ea3a33")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "U3")
 					(unit 5)
@@ -8048,7 +8059,7 @@
 			(uuid "94c3317f-5067-4598-82c0-5e8a18ea3a34")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "U3")
 					(unit 1)
@@ -8151,7 +8162,7 @@
 			(uuid "629c4875-9984-4bc5-9def-e33530dd3f15")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "D1")
 					(unit 1)
@@ -8267,7 +8278,7 @@
 			(uuid "94c3317f-5067-4598-82c0-5e8a18ea3a35")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "U3")
 					(unit 4)
@@ -8386,7 +8397,7 @@
 			(uuid "5ce0eefd-9d5d-4f6e-9ee3-eff2386a4119")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "U5")
 					(unit 4)
@@ -8501,7 +8512,7 @@
 			(uuid "5ce0eefd-9d5d-4f6e-9ee3-eff2386a411a")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "U5")
 					(unit 1)
@@ -8617,7 +8628,7 @@
 			(uuid "5ce0eefd-9d5d-4f6e-9ee3-eff2386a411b")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "U5")
 					(unit 3)
@@ -8733,7 +8744,7 @@
 			(uuid "5ce0eefd-9d5d-4f6e-9ee3-eff2386a411c")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "U5")
 					(unit 2)
@@ -8849,7 +8860,7 @@
 			(uuid "94c3317f-5067-4598-82c0-5e8a18ea3a36")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "U3")
 					(unit 2)
@@ -8965,7 +8976,7 @@
 			(uuid "fa165f35-62a0-46f3-9de6-ad2944b15f4a")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "DD6")
 					(unit 4)
@@ -9043,7 +9054,7 @@
 			(uuid "b54d76ff-cb14-46ff-a4ea-23a2dbc4cb53")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "#PWR05")
 					(unit 1)
@@ -9193,7 +9204,7 @@
 			(uuid "2348bd5f-7dca-451d-b58a-217a1e49d7a4")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "U4")
 					(unit 1)
@@ -9274,7 +9285,7 @@
 			(uuid "02d63256-5481-45f9-abe1-ee5d76e0c6e9")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "R2")
 					(unit 1)
@@ -9390,7 +9401,7 @@
 			(uuid "94c3317f-5067-4598-82c0-5e8a18ea3a37")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "U3")
 					(unit 3)
@@ -9471,7 +9482,7 @@
 			(uuid "4897e02b-0ae8-4176-94e4-255a9a94832b")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "R1")
 					(unit 1)
@@ -9549,7 +9560,7 @@
 			(uuid "09d1453d-876a-4ead-b0ee-9c63bf42a57c")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "#PWR03")
 					(unit 1)
@@ -9627,7 +9638,7 @@
 			(uuid "aecb704a-70ae-4aab-baed-12c0783a29fa")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "#PWR07")
 					(unit 1)
@@ -9705,7 +9716,7 @@
 			(uuid "cb23da94-48d6-4ec3-a2a2-135807c6104d")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "#PWR01")
 					(unit 1)
@@ -9821,7 +9832,7 @@
 			(uuid "4d4e1104-ee48-4873-8dc1-15b3f71c5a5a")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "U1")
 					(unit 3)
@@ -9937,7 +9948,7 @@
 			(uuid "4d4e1104-ee48-4873-8dc1-15b3f71c5a5b")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "U1")
 					(unit 4)
@@ -10055,7 +10066,7 @@
 			(uuid "4d4e1104-ee48-4873-8dc1-15b3f71c5a5c")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "U1")
 					(unit 5)
@@ -10171,7 +10182,7 @@
 			(uuid "4d4e1104-ee48-4873-8dc1-15b3f71c5a5d")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "U1")
 					(unit 1)
@@ -10287,7 +10298,7 @@
 			(uuid "4d4e1104-ee48-4873-8dc1-15b3f71c5a5e")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "U1")
 					(unit 2)
@@ -10365,7 +10376,7 @@
 			(uuid "3c4473dc-cc0b-4de9-bb3f-4a79b74f73d8")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "#PWR02")
 					(unit 1)
@@ -10481,7 +10492,7 @@
 			(uuid "fa165f35-62a0-46f3-9de6-ad2944b15f4b")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "DD6")
 					(unit 6)
@@ -10599,7 +10610,7 @@
 			(uuid "2c92371d-d4ce-4744-9d4f-d53d72fe6051")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "U2")
 					(unit 2)
@@ -10717,7 +10728,7 @@
 			(uuid "2c92371d-d4ce-4744-9d4f-d53d72fe6052")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "U2")
 					(unit 3)
@@ -10835,7 +10846,7 @@
 			(uuid "2c92371d-d4ce-4744-9d4f-d53d72fe6053")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "U2")
 					(unit 1)
@@ -10913,7 +10924,7 @@
 			(uuid "ee674df0-200f-47f6-8311-ee64f7024a84")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "#PWR04")
 					(unit 1)
@@ -10991,7 +11002,7 @@
 			(uuid "31c99888-e3a4-4326-bf6b-0d2cc833fe6f")
 		)
 		(instances
-			(project "MemManager"
+			(project "Fixes_Rev_0.1C"
 				(path "/e8e5a0b4-44b9-4e84-b144-8989a57edfae"
 					(reference "#PWR06")
 					(unit 1)
