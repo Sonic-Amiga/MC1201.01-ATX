@@ -19025,6 +19025,12 @@
 		(uuid "2c21e189-6e98-467d-b72e-90c950e3119c")
 	)
 	(junction
+		(at 375.92 332.74)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2c5c5651-2798-4f37-89aa-03d487a1c8dc")
+	)
+	(junction
 		(at 196.85 259.08)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -19319,12 +19325,6 @@
 		(uuid "4a54f106-000a-4a5b-8ef0-3bb73b45d2ee")
 	)
 	(junction
-		(at 375.92 342.9)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4acd08c2-a308-432b-a745-cc70d3d8be1e")
-	)
-	(junction
 		(at 486.41 36.83)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -19511,6 +19511,12 @@
 		(uuid "5f502494-ecd3-46b1-adff-3204694c09d2")
 	)
 	(junction
+		(at 408.94 332.74)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5f87a42e-ffbe-49e2-b7ea-21a449fb5856")
+	)
+	(junction
 		(at 146.05 156.21)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -19647,12 +19653,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "71785fd8-6868-4a50-9ca1-4275d4ad2533")
-	)
-	(junction
-		(at 408.94 342.9)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "717db090-5b9c-4d3d-9277-1118773a8e8a")
 	)
 	(junction
 		(at 358.14 311.15)
@@ -23334,16 +23334,6 @@
 	)
 	(wire
 		(pts
-			(xy 368.3 342.9) (xy 368.3 340.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "03794492-01f5-4d13-8746-1049c0e52cc0")
-	)
-	(wire
-		(pts
 			(xy 204.47 185.42) (xy 204.47 187.96)
 		)
 		(stroke
@@ -23501,6 +23491,16 @@
 			(type default)
 		)
 		(uuid "07953b51-7e47-403e-9375-4143d0ca2dd3")
+	)
+	(wire
+		(pts
+			(xy 375.92 332.74) (xy 375.92 320.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "07d48594-20d7-4705-b79a-1bc76e3b6857")
 	)
 	(wire
 		(pts
@@ -24632,16 +24632,6 @@
 			(type default)
 		)
 		(uuid "212d6d25-e85f-45e0-94a6-dd9d943e162d")
-	)
-	(wire
-		(pts
-			(xy 375.92 342.9) (xy 375.92 320.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2135e31d-46f4-46fe-bcf8-3aac03b770a4")
 	)
 	(wire
 		(pts
@@ -27169,16 +27159,6 @@
 	)
 	(wire
 		(pts
-			(xy 375.92 342.9) (xy 408.94 342.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "55e2753e-066c-48ec-bb7d-3701f0e14e92")
-	)
-	(wire
-		(pts
 			(xy 370.84 39.37) (xy 368.3 39.37)
 		)
 		(stroke
@@ -28256,6 +28236,16 @@
 			(type default)
 		)
 		(uuid "698d0cfd-34d8-4bf8-9f59-72f7382b9498")
+	)
+	(wire
+		(pts
+			(xy 375.92 332.74) (xy 408.94 332.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "69de3de0-fbba-4b35-89f8-6bcd1a2cf81f")
 	)
 	(wire
 		(pts
@@ -29919,7 +29909,7 @@
 	)
 	(wire
 		(pts
-			(xy 368.3 342.9) (xy 375.92 342.9)
+			(xy 368.3 332.74) (xy 375.92 332.74)
 		)
 		(stroke
 			(width 0)
@@ -49139,7 +49129,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 368.3 336.55 0)
+		(at 368.3 328.93 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -49150,7 +49140,7 @@
 		(fields_autoplaced yes)
 		(uuid "35e5c009-4532-43f9-a339-f94a85550781")
 		(property "Reference" "R68"
-			(at 370.84 335.2799 0)
+			(at 370.84 327.6599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -49161,7 +49151,7 @@
 			)
 		)
 		(property "Value" "3,3K"
-			(at 370.84 337.8199 0)
+			(at 370.84 330.1999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -49172,7 +49162,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
-			(at 366.522 336.55 90)
+			(at 366.522 328.93 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -49183,7 +49173,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 368.3 336.55 0)
+			(at 368.3 328.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -49194,7 +49184,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 368.3 336.55 0)
+			(at 368.3 328.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -65046,7 +65036,7 @@
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 368.3 332.74 0)
+		(at 368.3 325.12 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -65056,7 +65046,7 @@
 		(dnp no)
 		(uuid "a92d2688-d78c-48cf-ad41-07bf7c163dbe")
 		(property "Reference" "#PWR075"
-			(at 368.3 336.55 0)
+			(at 368.3 328.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -65067,7 +65057,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 368.3 328.93 0)
+			(at 368.3 321.31 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -65077,7 +65067,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 368.3 332.74 0)
+			(at 368.3 325.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -65088,7 +65078,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 368.3 332.74 0)
+			(at 368.3 325.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -65099,7 +65089,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 368.3 332.74 0)
+			(at 368.3 325.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
