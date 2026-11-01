@@ -4,6 +4,11 @@
 	(generator_version "10.0")
 	(uuid "adc5d534-4a1b-4097-8878-4ec1d2b95a4f")
 	(paper "A4")
+	(title_block
+		(title "Half-sized MPI backplane")
+		(date "2026-11-01")
+		(rev "1.0")
+	)
 	(lib_symbols
 		(symbol "Connector_Generic:Conn_01x03"
 			(pin_names
