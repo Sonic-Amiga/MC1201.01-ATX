@@ -198,17 +198,6 @@
 		(path "/6bfa631a-837d-4612-a001-7734a9b29641")
 		(sheetname "/")
 		(sheetfile "QBus.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "3" "5" "7" "9" "11" "13" "15" "17" "19" "21" "23" "25" "27"
-					"29" "31" "33" "35" "37" "39" "41" "43" "45" "47" "49" "51" "53" "55"
-					"57" "59" "61" "63" "2" "4" "6" "8" "10" "12" "14" "16" "18" "20" "22"
-					"24" "26" "28" "30" "32" "34" "36" "38" "40" "42" "44" "46" "48" "50"
-					"52" "54" "56" "58" "60" "62" "64"
-				)
-			)
-		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -811,7 +800,6 @@
 			(net "GND")
 			(pinfunction "Pin_29_29")
 			(pintype "passive")
-			(thermal_bridge_angle 37)
 			(uuid "577573c3-1792-4235-a335-9daa1d95427b")
 		)
 		(pad "30" thru_hole circle
@@ -1269,19 +1257,6 @@
 		(path "/4e9762ee-a6c9-46c8-86d3-db0f04b29528")
 		(sheetname "/")
 		(sheetfile "QBus.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "BV2" "BU2" "BT2" "BS2" "BR2" "BP2" "BN2" "BM2" "BL2" "BK2" "BJ2"
-					"BH2" "BF2" "BE2" "BD2" "BC2" "BB2" "BA2" "AV2" "AU2" "AT2" "AS2" "AR2"
-					"AP2" "AN2" "AM2" "AL2" "AK2" "AJ2" "AH2" "AF2" "AE2" "AD2" "AC2" "AB2"
-					"AA2" "BV1" "BU1" "BT1" "BS1" "BR1" "BP1" "BN1" "BM1" "BL1" "BK1" "BJ1"
-					"BH1" "BF1" "BE1" "BD1" "BC1" "BB1" "BA1" "AV1" "AU1" "AT1" "AS1" "AR1"
-					"AP1" "AN1" "AM1" "AL1" "AK1" "AJ1" "AH1" "AF1" "AE1" "AD1" "AC1" "AB1"
-					"AA1"
-				)
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -1305,6 +1280,32 @@
 			(fill no)
 			(layer "F.CrtYd")
 			(uuid "4d1a6852-a9e7-4fde-aaab-5f2db07dbbd2")
+		)
+		(fp_text user "BA1"
+			(at -11.5 -37 0)
+			(unlocked yes)
+			(layer "F.SilkS")
+			(uuid "74537c92-7648-4892-b913-db8920327c0e")
+			(effects
+				(font
+					(size 3 3)
+					(thickness 0.3)
+				)
+				(justify left bottom)
+			)
+		)
+		(fp_text user "AA1"
+			(at -11 33 0)
+			(unlocked yes)
+			(layer "F.SilkS")
+			(uuid "2efff26e-0978-4864-8aae-7d3fbba18a53")
+			(effects
+				(font
+					(size 3 3)
+					(thickness 0.3)
+				)
+				(justify left bottom)
+			)
 		)
 		(fp_text user "${REFERENCE}"
 			(at 4.5 -101 0)
@@ -2162,12 +2163,6 @@
 		(path "/72169986-cf43-4088-a70c-971182d86983")
 		(sheetname "/")
 		(sheetfile "QBus.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1")
-			)
-		)
 		(attr exclude_from_pos_files exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
@@ -2274,19 +2269,6 @@
 		(path "/4047cfa0-1eda-4225-93c1-c58b9bd58f51")
 		(sheetname "/")
 		(sheetfile "QBus.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "BV2" "BU2" "BT2" "BS2" "BR2" "BP2" "BN2" "BM2" "BL2" "BK2" "BJ2"
-					"BH2" "BF2" "BE2" "BD2" "BC2" "BB2" "BA2" "AV2" "AU2" "AT2" "AS2" "AR2"
-					"AP2" "AN2" "AM2" "AL2" "AK2" "AJ2" "AH2" "AF2" "AE2" "AD2" "AC2" "AB2"
-					"AA2" "BV1" "BU1" "BT1" "BS1" "BR1" "BP1" "BN1" "BM1" "BL1" "BK1" "BJ1"
-					"BH1" "BF1" "BE1" "BD1" "BC1" "BB1" "BA1" "AV1" "AU1" "AT1" "AS1" "AR1"
-					"AP1" "AN1" "AM1" "AL1" "AK1" "AJ1" "AH1" "AF1" "AE1" "AD1" "AC1" "AB1"
-					"AA1"
-				)
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -2310,6 +2292,32 @@
 			(fill no)
 			(layer "F.CrtYd")
 			(uuid "a7304da2-d44f-4c05-bd17-229f765eb023")
+		)
+		(fp_text user "BA1"
+			(at -11.5 -37 0)
+			(unlocked yes)
+			(layer "F.SilkS")
+			(uuid "bb95be3c-00e5-46c1-b902-3b1e7d2a1e1a")
+			(effects
+				(font
+					(size 3 3)
+					(thickness 0.3)
+				)
+				(justify left bottom)
+			)
+		)
+		(fp_text user "AA1"
+			(at -11 33 0)
+			(unlocked yes)
+			(layer "F.SilkS")
+			(uuid "e94440b9-252f-438f-9a43-f0a87b85aafd")
+			(effects
+				(font
+					(size 3 3)
+					(thickness 0.3)
+				)
+				(justify left bottom)
+			)
 		)
 		(fp_text user "${REFERENCE}"
 			(at 4.5 -101 0)
@@ -3167,12 +3175,6 @@
 		(path "/06785b14-9f60-45b1-a06c-c89976cea9c0")
 		(sheetname "/")
 		(sheetfile "QBus.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1")
-			)
-		)
 		(attr exclude_from_pos_files exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
@@ -3288,12 +3290,6 @@
 		(path "/edd914fe-6b7d-4b8a-adef-a23bb2558fef")
 		(sheetname "/")
 		(sheetfile "QBus.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2" "3")
-			)
-		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3593,12 +3589,6 @@
 		(path "/b82d1c86-9231-4d93-b2f0-519e0bd1b040")
 		(sheetname "/")
 		(sheetfile "QBus.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1")
-			)
-		)
 		(attr exclude_from_pos_files exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
@@ -3714,12 +3704,6 @@
 		(path "/b53c7a7a-ba73-453c-9efa-e0c1f5a6a745")
 		(sheetname "/")
 		(sheetfile "QBus.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1")
-			)
-		)
 		(attr exclude_from_pos_files exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
@@ -3826,19 +3810,6 @@
 		(path "/d93459b6-b071-42aa-b563-221ede479ed6")
 		(sheetname "/")
 		(sheetfile "QBus.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "BV2" "BU2" "BT2" "BS2" "BR2" "BP2" "BN2" "BM2" "BL2" "BK2" "BJ2"
-					"BH2" "BF2" "BE2" "BD2" "BC2" "BB2" "BA2" "AV2" "AU2" "AT2" "AS2" "AR2"
-					"AP2" "AN2" "AM2" "AL2" "AK2" "AJ2" "AH2" "AF2" "AE2" "AD2" "AC2" "AB2"
-					"AA2" "BV1" "BU1" "BT1" "BS1" "BR1" "BP1" "BN1" "BM1" "BL1" "BK1" "BJ1"
-					"BH1" "BF1" "BE1" "BD1" "BC1" "BB1" "BA1" "AV1" "AU1" "AT1" "AS1" "AR1"
-					"AP1" "AN1" "AM1" "AL1" "AK1" "AJ1" "AH1" "AF1" "AE1" "AD1" "AC1" "AB1"
-					"AA1"
-				)
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -3862,6 +3833,32 @@
 			(fill no)
 			(layer "F.CrtYd")
 			(uuid "be503987-12a9-4892-8f1e-4aca962c8928")
+		)
+		(fp_text user "BA1"
+			(at -11.5 -37 0)
+			(unlocked yes)
+			(layer "F.SilkS")
+			(uuid "e327cc4b-58f1-4d76-ba34-4b1ee35ff6cc")
+			(effects
+				(font
+					(size 3 3)
+					(thickness 0.3)
+				)
+				(justify left bottom)
+			)
+		)
+		(fp_text user "AA1"
+			(at -11 33 0)
+			(unlocked yes)
+			(layer "F.SilkS")
+			(uuid "360e71fe-cecd-45a0-98d8-7ddf629565e3")
+			(effects
+				(font
+					(size 3 3)
+					(thickness 0.3)
+				)
+				(justify left bottom)
+			)
 		)
 		(fp_text user "${REFERENCE}"
 			(at 4.5 -101 0)
@@ -4710,19 +4707,6 @@
 		(path "/de4ae806-1808-4227-b3f4-3fa1114e9b0e")
 		(sheetname "/")
 		(sheetfile "QBus.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "BV2" "BU2" "BT2" "BS2" "BR2" "BP2" "BN2" "BM2" "BL2" "BK2" "BJ2"
-					"BH2" "BF2" "BE2" "BD2" "BC2" "BB2" "BA2" "AV2" "AU2" "AT2" "AS2" "AR2"
-					"AP2" "AN2" "AM2" "AL2" "AK2" "AJ2" "AH2" "AF2" "AE2" "AD2" "AC2" "AB2"
-					"AA2" "BV1" "BU1" "BT1" "BS1" "BR1" "BP1" "BN1" "BM1" "BL1" "BK1" "BJ1"
-					"BH1" "BF1" "BE1" "BD1" "BC1" "BB1" "BA1" "AV1" "AU1" "AT1" "AS1" "AR1"
-					"AP1" "AN1" "AM1" "AL1" "AK1" "AJ1" "AH1" "AF1" "AE1" "AD1" "AC1" "AB1"
-					"AA1"
-				)
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -4746,6 +4730,32 @@
 			(fill no)
 			(layer "F.CrtYd")
 			(uuid "f4a407cf-58db-494f-a928-cdb5b3e9b136")
+		)
+		(fp_text user "BA1"
+			(at -11.5 -37 0)
+			(unlocked yes)
+			(layer "F.SilkS")
+			(uuid "75d2adc4-1429-4b9f-b3c9-3ac722e135e2")
+			(effects
+				(font
+					(size 3 3)
+					(thickness 0.3)
+				)
+				(justify left bottom)
+			)
+		)
+		(fp_text user "AA1"
+			(at -11 33 0)
+			(unlocked yes)
+			(layer "F.SilkS")
+			(uuid "c0fa25a4-5636-43cf-997b-79a674a604e1")
+			(effects
+				(font
+					(size 3 3)
+					(thickness 0.3)
+				)
+				(justify left bottom)
+			)
 		)
 		(fp_text user "${REFERENCE}"
 			(at 4.5 -101 0)
@@ -5603,12 +5613,6 @@
 		(path "/c64f2d1c-5016-4ea7-8c7a-aef79d51404a")
 		(sheetname "/")
 		(sheetfile "QBus.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2" "3" "4")
-			)
-		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
