@@ -11723,6 +11723,28 @@
 		)
 		(uuid "01802f03-6314-4de7-93d4-443e129fe9da")
 	)
+	(text "ERRATUM:\nОтрезать от разъема J1\nПодключить к линии\n~{EXT_DMR} на мат. плате"
+		(exclude_from_sim no)
+		(at 344.17 107.95 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "0944b90c-e642-4499-ac0c-2cd99145d939")
+	)
+	(text "Сигналы RES1 и RES2 не\nиспользуются, разведены\nпо ошибке"
+		(exclude_from_sim no)
+		(at 344.17 275.59 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "0a44d5e2-50ff-41bd-bfee-e71d0bd1facb")
+	)
 	(text "HALT "
 		(exclude_from_sim no)
 		(at 16.51 217.17 0)
@@ -12412,6 +12434,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "88aedd99-ab52-4920-a49d-84dcab71f3a4")
+	)
+	(junction
+		(at 382.27 99.695)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8a719305-018f-4757-acb0-751b5e1e0bfe")
 	)
 	(junction
 		(at 455.93 97.155)
@@ -16654,7 +16682,7 @@
 	)
 	(wire
 		(pts
-			(xy 372.745 99.695) (xy 383.54 99.695)
+			(xy 372.745 99.695) (xy 382.27 99.695)
 		)
 		(stroke
 			(width 0)
@@ -17041,6 +17069,17 @@
 			(type default)
 		)
 		(uuid "25dd37ea-b623-4004-8823-713251e1a3f7")
+	)
+	(polyline
+		(pts
+			(xy 379.73 99.06) (xy 381 100.33)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 255 0 0 1)
+		)
+		(uuid "26abf9fc-32b1-463f-84b0-083aa123546d")
 	)
 	(wire
 		(pts
@@ -17951,6 +17990,16 @@
 			(type default)
 		)
 		(uuid "45755c80-b6fe-4a2e-ac2b-0b516801d5b0")
+	)
+	(wire
+		(pts
+			(xy 382.27 99.695) (xy 383.54 99.695)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "459a0f7f-6b38-4732-9515-fb7eaf075943")
 	)
 	(wire
 		(pts
@@ -19292,6 +19341,17 @@
 		)
 		(uuid "7248732a-93be-479c-82cc-14bf4ef108bf")
 	)
+	(polyline
+		(pts
+			(xy 381 99.06) (xy 379.73 100.33)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 255 0 0 1)
+		)
+		(uuid "7253272e-7c4b-4e40-a5ac-35944d3a9d95")
+	)
 	(wire
 		(pts
 			(xy 155.575 173.99) (xy 155.575 171.45)
@@ -20294,6 +20354,17 @@
 	)
 	(wire
 		(pts
+			(xy 382.27 102.87) (xy 348.615 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 0 0 1)
+		)
+		(uuid "91c0c7bc-64e7-4a15-bf06-441d914f9daf")
+	)
+	(wire
+		(pts
 			(xy 415.29 56.515) (xy 425.45 56.515)
 		)
 		(stroke
@@ -20721,6 +20792,17 @@
 			(type default)
 		)
 		(uuid "9d41820d-2304-4072-8f07-08baa27524fa")
+	)
+	(wire
+		(pts
+			(xy 382.27 99.695) (xy 382.27 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 0 0 1)
+		)
+		(uuid "9e06166d-47a1-4f01-b7af-12e47c772931")
 	)
 	(wire
 		(pts
@@ -25043,7 +25125,7 @@
 		)
 		(uuid "04ad7560-3998-4df2-aade-4b5641a84aba")
 	)
-	(label "~{BDMGO}"
+	(label "RES1"
 		(at 328.295 236.855 0)
 		(effects
 			(font
@@ -25303,6 +25385,16 @@
 		)
 		(uuid "18f06533-9c81-4497-b378-07ccb99feaef")
 	)
+	(label "~{EXT_DMR}"
+		(at 348.615 102.87 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1961dd27-98da-4cb3-845c-572540011d42")
+	)
 	(label "~{IA15}"
 		(at 172.72 236.855 0)
 		(effects
@@ -25423,7 +25515,7 @@
 		)
 		(uuid "21ad2e62-f901-4312-9b10-aa1a218c1307")
 	)
-	(label "~{BDMGI}"
+	(label "~{BDMGO}"
 		(at 311.785 265.43 0)
 		(effects
 			(font
@@ -25643,7 +25735,7 @@
 		)
 		(uuid "3211cb5c-b3db-4fdd-b1de-989f3b44e0a4")
 	)
-	(label "~{BIAKI}"
+	(label "~{BIAKO}"
 		(at 328.295 247.015 0)
 		(effects
 			(font
@@ -25843,7 +25935,7 @@
 		)
 		(uuid "3c3f439a-8f79-454f-89b0-c0e543f76b82")
 	)
-	(label "~{BIAKO}"
+	(label "RES2"
 		(at 328.295 244.475 0)
 		(effects
 			(font
@@ -26843,7 +26935,7 @@
 		)
 		(uuid "8a6fce78-685b-4219-8b0b-cfe605154ffc")
 	)
-	(label "~{BDMGO}"
+	(label "RES1"
 		(at 311.785 262.89 0)
 		(effects
 			(font
@@ -27103,7 +27195,7 @@
 		)
 		(uuid "9ede3c52-411f-46a6-a2be-5caab978b3ce")
 	)
-	(label "~{BIAKI}"
+	(label "~{BIAKO}"
 		(at 419.1 170.815 0)
 		(effects
 			(font
@@ -27323,7 +27415,7 @@
 		)
 		(uuid "b22a22b3-8084-4201-a55b-1c3a4aeb4857")
 	)
-	(label "~{BDMGI}"
+	(label "~{BDMGO}"
 		(at 419.1 161.925 0)
 		(effects
 			(font
@@ -27593,7 +27685,7 @@
 		)
 		(uuid "c5f1c0a4-a7bc-4f90-8f04-dfcfba84c16c")
 	)
-	(label "~{BDMGI}"
+	(label "~{BDMGO}"
 		(at 328.295 239.395 0)
 		(effects
 			(font
@@ -27613,7 +27705,7 @@
 		)
 		(uuid "c6ab06ee-1dcc-4ce5-91d7-277a58d61200")
 	)
-	(label "~{BIAKO}"
+	(label "RES2"
 		(at 311.785 283.21 0)
 		(effects
 			(font
@@ -27773,7 +27865,7 @@
 		)
 		(uuid "d5ad1cb1-b1d7-4053-8a46-221f7a3223f0")
 	)
-	(label "~{BIAKI}"
+	(label "~{BIAKO}"
 		(at 311.785 285.75 0)
 		(effects
 			(font
